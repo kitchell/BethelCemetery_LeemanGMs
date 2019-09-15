@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Leeman Family</title>
+    <meta name="description" content="Leeman Family Grave Markers at Bethel Cemetery WebVR">
+    <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v5.1.0/dist/aframe-extras.min.js"></script>
+<!--    <script src="https://unpkg.com/aframe-simple-sun-sky@^1.2.2/simple-sun-sky.js"></script>-->
+
+  </head>
+  <body>
+
+    <a-scene background="color: black" loading-screen="dotsColor: green; backgroundColor: black">
+
+<!--        <a-simple-sun-sky sun-position="1 1 0" fog-color="#578ABD" light-color="#6CB5FE" dark-color="#6AA3DC"></a-simple-sun-sky>-->
+
+      
+        <a-assets timeout="40000">
+<!--
+            <a-asset-item id="tree1model" src="./assets/models/23c.glb"></a-asset-item>
+            <a-asset-item id="tree2model" src="./assets/models/23b.glb"></a-asset-item>
+-->
+            <a-asset-item id="O15model" src="./assets/models/O15.glb"></a-asset-item>
+            <a-asset-item id="T7model" src="./assets/models/T7.glb"></a-asset-item>
+            <a-asset-item id="T8model" src="./assets/models/T8.glb"></a-asset-item>
+
+<!--            <a-asset-item id="grass" src="./assets/models/scene.gltf"></a-asset-item>-->
+<!--            <a-asset-item id="shrubs" src="./assets/models/shrubs.glb"></a-asset-item>-->
+<!--            <a-asset-item id="hedge" src="./assets/models/hedge.glb"></a-asset-item>-->
+            
+            <img id="grassimg" src="./assets/imgs/TexturesCom_GrassDead0104_1_seamless_S.jpg">
+            <img id="skyimg" crossorigin="anonymous"  src="./assets/imgs/CGSkies_0339_free_background.jpg">
+<!--            <img id="hedge" src="./assets/imgs/TexturesCom_Hedges0060_1_seamless_S.jpg">-->
+
+<!--            <audio id="birds" src="./assets/sounds/birds.mp3" preload="auto"></audio>-->
+        </a-assets>
+        
+        <a-sky id="sky" src="#skyimg" radius="2500"></a-sky>
+        
+        <a-entity id="rig"
+          movement-controls
+          position="0 0 1.2"
+          rotation="0 0 0">
+            <a-entity camera
+            position="0 1.6 0"
+            look-controls="pointerLockEnabled: true"></a-entity>
+<!--            <a-entity id="birdsounds" sound="src: #birds; autoplay: true; loop: true"></a-entity>-->
+        </a-entity>
+        
+<!--        models -->
+        <a-entity id="O15" gltf-model="#O15model" rotation="0 90 0" position="1.159 0.034 -2.537" scale="1 1 1"></a-entity>
+        <a-entity id="T7" gltf-model="#T7model" rotation="0 90 0 " position="1.433 0.056 -2" scale="1 1 1"></a-entity>
+        <a-entity id="T8" gltf-model="#T8model" rotation="0 90 0 " position="0.032 -0.016 -2" scale="1 1 1"></a-entity>
+
+<!--        <a-entity id="gr" gltf-model="#grass" rotation="0 0 0" position=".25 0 -.8" scale=".15 .02 .15"></a-entity>-->
+<!--        <a-entity id="gr2" gltf-model="#grass" rotation="0 0 0" position="-2.53 0 3.288" scale=".35 .02 .35"></a-entity>-->
+<!--        <a-entity id="sh" gltf-model="#shrubs" rotation="0 0 0" position="-0.19 1.024 -.250" scale=".5 .5 .5"></a-entity>-->
+<!--        <a-entity id="hdg" gltf-model="#hedge" rotation="0 0 0" position="-3 0 -.8" scale=".1 .1 .1"></a-entity>-->
+
+<!--
+        <a-entity id="tree1" gltf-model="#tree1model" position="1.43 1.282 -31.8" scale=".004 .004 .004"></a-entity>
+        <a-entity id="tree2" gltf-model="#tree2model" position="9.499 -0.429 -5.413" scale=".002 .002 .002"></a-entity>
+-->
+
+<!--            <a-box src="#hedge" position="2 0 -5" scale="6 3 1.5" repeat="6 3 1.5" color="#384325"></a-box>-->
+        
+<!--        lighting -->
+        <a-light type="ambient" color="#BBB" castShadow="true" intensity="2"></a-light>
+<!--
+        <a-light light="type: spot; color: #EEE; intensity: 4" position="-1 1 -0.625" target="#V"><a-entity id="V" position="2.15 -0.014 -0.169" visible=""></a-entity>
+        </a-light>
+-->
+
+<!--        <a-light type="ambient" color="#BBB" castShadow="true" intensity="1" target="#R4 #C9 #V23"></a-light>-->
+<!--
+        <a-light type="spot" color="#BBB" castShadow="true" intensity="4.5" angle="20" position="0 2 0" 
+                 decay=".2" distance="5" target="#left">
+        <a-entity id="left" position="-4.304 -1 -1.736" visible=""></a-entity></a-light>
+-->
+<!--
+        <a-text align="center" value="Mary Ann
+                                      Wife of George Poland
+                                      Born Oct. 30 1852
+                                      Died Feb. 9 1883" 
+                position="-0.859 1.12 -2" scale=".3 .3 .3" color="#919191"></a-text>
+        <a-text align="center" value="Mary E. Poland
+                                      Born Feb. 5 1850
+                                      Died Sept. 6 1852" 
+                position=".464 1.12 -2" scale=".3 .3 .3" color="#919191"></a-text>
+        <a-text align="center" value="Lynn Poland 
+                                      Born Jan. 14 1827
+                                      Died Mar. 11 1907" 
+                position="1.739 1.12 -2" scale=".3 .3 .3" color="#919191"></a-text>
+-->
+<!--        grass -->
+        <a-plane id="grass" material="src:#grassimg; repeat:30 30" rotation="-90 0 0" scale="70 70 1" color="#384325"></a-plane>
+<!--        color:#314106;-->
+    </a-scene>
+  </body>
+</html>
